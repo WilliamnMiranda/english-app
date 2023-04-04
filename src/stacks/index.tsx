@@ -1,5 +1,4 @@
-import { NavigationContainer } from "@react-navigation/native"
-import { Text } from "react-native"
+import { Text, View } from "react-native"
 import Auth from "./auth"
 
 const Navigation = () => {

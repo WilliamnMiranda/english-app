@@ -8,13 +8,11 @@ const Intro = () => {
       <Text>INTROOO</Text>
       <Text>INTROOO</Text>
       <Text>INTROOO</Text>
-
       <Text>INTROOO</Text>
       <Text>INTROOO</Text>
       <Text>INTROOO</Text>
       <Text>INTROOO</Text>
       <Text>INTROOO</Text>
-
     </View>
   )
 }
