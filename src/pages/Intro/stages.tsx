@@ -8,22 +8,22 @@ const props = {
 export const Slides = [
 	{
 		key: 1,
-		title: "Adicione e gerencie suas contas",
-		text: "Você pode adicionar todas as contas em um só lugar e gerenciar suas financas do seu jeito",
+		title: "Estude com o melhor método: Flashcards!",
+		text: "Aqui, você pode estudar de uma forma mais eficiente e divertida. Com nossos cartões de estudo, você pode memorizar qualquer coisa, desde idiomas até fórmulas matemáticas, de maneira fácil e rápida.",
 		image: <Stage1 {...props} />,
 		backgroundColor: '#59b2ab',
 	},
 	{
 		key: 2,
-		title: "Acompanhe suas economias",
-		text: "Você pode acompanhar suas receitas, atividades de despesas e todas as estatísticas",
+		title: "Estude de onde quiser",
+		text: "Com o nosso aplicativo de estudos de cartões, você tem a liberdade de estudar de onde quiser, em qualquer dispositivo. Seja no seu computador, tablet ou smartphone, o acesso ao seu material de estudo é fácil e prático",
 		image: <Stage2 {...props} />,
 		backgroundColor: '#59b2ab',
 	},
 	{
 		key: 3,
-		title: "Defina suas metas",
-		text: "Você pode definir suas metas de forma facil e pratica , com apenas alguma informações e iremos gerenciar tudo para você ",
+		title: "Estude do seu jeito!",
+		text: "Personalize suas configurações de estudo e aprenda da maneira que melhor se adapta a você. Você pode otimizar sua experiência de estudo e alcançar seus objetivos acadêmicos e profissionais de maneira mais eficiente",
 		image: <Stage3 {...props} />,
 		backgroundColor: '#59b2ab',
 	},

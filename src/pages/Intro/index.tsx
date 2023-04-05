@@ -2,20 +2,19 @@ import React, { ReactNode } from 'react'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import { Slides } from './stages'
 import AppIntroSlider from 'react-native-app-intro-slider'
-import { NativeStackScreenProps } from '@react-navigation/native-stack'
-
-
+import * as C from './styles'
 const Intro = ({ navigation }: any) => {
   const [numberStage, setNumberStage] = React.useState(1)
-
   const DoneButton = () => {
     return (
-      <View className='w-full justify-center items-center'>
+      <View
+        className='w-full justify-center items-center'
+      >
         <TouchableOpacity
-          onPress={() => navigation.navigate('Access')}
+          onPress={() => navigation.navigate('Login')}
           className='bg-sky-600 p-4 rounded-xl w-11/12 items-center justify-center'
         >
-          <Text style={{ color: 'white', fontWeight: '600' }}>Iniciar</Text>
+          <Text>Iniciar</Text>
         </TouchableOpacity>
       </View>
     )
@@ -31,24 +30,28 @@ const Intro = ({ navigation }: any) => {
     }
   }) => {
     return (
-      <View className='flex-1 justify-center items-center gap-4 px-5 bg-white'>
+      <C.ContainerIntro>
         <View className='w-full h-1/2'>
           {item.image}
         </View>
-        <Text>{item.title}</Text>
-        <Text>{item.text}</Text>
-      </View>
+        <C.TittleIntro adjustsFontSizeToFit>
+          {item.title}
+        </C.TittleIntro>
+        <C.TextIntro>
+          {item.text}
+        </C.TextIntro>
+      </C.ContainerIntro>
     )
   }
   const alterStage = (index: number) => setNumberStage(index + 1)
   return (
     <>
-      <View className='items-center w-full justify-between flex-row p-5 bg-white'>
+      <C.ContainerHeader>
         <Text className='font-bold text-sm'> {numberStage} /3</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('Access')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
           {numberStage <= Slides.length - 1 && <Text className='font-bold color-sky-600 text-sm'> SKIP </Text>}
         </TouchableOpacity>
-      </View>
+      </C.ContainerHeader>
 
       <AppIntroSlider
         renderItem={renderSlides}
