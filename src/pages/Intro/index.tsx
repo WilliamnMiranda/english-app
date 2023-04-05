@@ -31,7 +31,7 @@ const Intro = ({ navigation }: any) => {
     }
   }) => {
     return (
-      <View className='flex-1 justify-center items-center gap-4 px-7'>
+      <View className='flex-1 justify-center items-center gap-4 px-5 bg-white'>
         <View className='w-full h-1/2'>
           {item.image}
         </View>
@@ -43,10 +43,10 @@ const Intro = ({ navigation }: any) => {
   const alterStage = (index: number) => setNumberStage(index + 1)
   return (
     <>
-      <View className="items-center w-full justify-between bg-red-400 flex-row p-5">
-        <Text> {numberStage} /3</Text>
+      <View className="items-center w-full justify-between flex-row p-5 bg-white">
+        <Text className='font-bold text-sm'> {numberStage} /3</Text>
         <TouchableOpacity onPress={() => navigation.navigate('Access')}>
-          {numberStage <= Slides.length - 1 && <Text> SKIP </Text>}
+          {numberStage <= Slides.length - 1 && <Text className='font-bold color-sky-600 text-sm'> SKIP </Text>}
         </TouchableOpacity>
       </View>
 
