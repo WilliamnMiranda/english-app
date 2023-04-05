@@ -43,7 +43,7 @@ const Intro = ({ navigation }: any) => {
   const alterStage = (index: number) => setNumberStage(index + 1)
   return (
     <>
-      <View className="items-center w-full justify-between flex-row p-5 bg-white">
+      <View className='items-center w-full justify-between flex-row p-5 bg-white'>
         <Text className='font-bold text-sm'> {numberStage} /3</Text>
         <TouchableOpacity onPress={() => navigation.navigate('Access')}>
           {numberStage <= Slides.length - 1 && <Text className='font-bold color-sky-600 text-sm'> SKIP </Text>}
