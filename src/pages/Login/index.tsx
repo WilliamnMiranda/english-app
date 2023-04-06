@@ -4,7 +4,16 @@ import Face from '../../images/face-logo.svg'
 import Google from '../../images/google-logo.svg'
 import React from 'react'
 import * as C from './styles'
+import userServices from '../../services/userServices'
 const Login = () => {
+  const data = {
+    email: 'williamnmiranda@gmail.com',
+    password: '123'
+  }
+
+  const submit = async () => await userServices.login(data)
+
+
   return (
     <C.ContainerLogin>
 
@@ -23,7 +32,7 @@ const Login = () => {
 
 
       <C.ButtonSubmit>
-        <C.TextButtonSubmit>login</C.TextButtonSubmit>
+        <C.TextButtonSubmit onPress={() => submit()}>login</C.TextButtonSubmit>
       </C.ButtonSubmit>
 
       <C.RecoverPassword>Esqueci minha senha</C.RecoverPassword>

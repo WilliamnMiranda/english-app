@@ -1,9 +1,8 @@
 import { api } from '../helpers/api';
 const userServices = {
   login: async (data: any) => {
-    return await (
-      await api.post('/access/login', data)
-    ).data;
+    const user = await (await api.post('/access/login', data)).data;
+    return user;
   },
   auth: async (token: string) => {
     return await (
