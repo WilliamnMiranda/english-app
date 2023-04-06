@@ -1,12 +1,14 @@
 import { View, Text, TouchableOpacity } from 'react-native'
 import ImageLogin from '../../images/Login.svg'
+import Face from '../../images/face-logo.svg'
+import Google from '../../images/google-logo.svg'
 import React from 'react'
 import * as C from './styles'
 const Login = () => {
   return (
     <C.ContainerLogin>
 
-      <C.ContainerImage> <ImageLogin /> </C.ContainerImage>
+      <C.ContainerImage><ImageLogin /></C.ContainerImage>
       <C.ContainerInputs>
         <C.ContainerInput>
           <C.Label>Digite seu email</C.Label>
@@ -24,8 +26,21 @@ const Login = () => {
         <C.TextButtonSubmit>login</C.TextButtonSubmit>
       </C.ButtonSubmit>
 
-      <C.RecoverPassword> Esqueci minha senha </C.RecoverPassword>
-      <C.CreateAccount> Criar minha conta</C.CreateAccount>
+      <C.RecoverPassword>Esqueci minha senha</C.RecoverPassword>
+      <C.CreateAccount>Criar minha conta</C.CreateAccount>
+
+      <C.TittleLoginWithSocials>
+        <C.Line></C.Line>
+        <C.TextLoginWithSocials> entrar com </C.TextLoginWithSocials>
+        <C.Line></C.Line>
+      </C.TittleLoginWithSocials>
+
+      <C.GroupLoginSocials>
+        <C.ButtonLogin>
+          <Google />
+          <C.TextButton> GOOGLE </C.TextButton>
+        </C.ButtonLogin>
+      </C.GroupLoginSocials>
     </C.ContainerLogin>
   )
 }

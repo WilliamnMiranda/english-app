@@ -11,8 +11,9 @@ export const ContainerHeader = styled.View`
 
 export const TittleIntro = styled.Text`
   font-family: 'Roboto_500Medium';
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
+  width: 100%;
 `;
 
 export const TextIntro = styled.Text`

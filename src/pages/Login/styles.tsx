@@ -21,8 +21,8 @@ export const Input = styled.TextInput`
   border: 1px solid rgba(0,0,0,0.4);
 `
 export const Label = styled.Text`
-  font-family: 'Poppins_500Medium_Italic';
-  margin-bottom: 5px;
+  font-family: 'Poppins_400Regular';
+  margin-bottom: 3px;
 `
 
 export const ButtonSubmit = styled.TouchableOpacity`
@@ -49,5 +49,39 @@ export const CreateAccount = styled.Text`
   width: 100%;
   text-align: center;
   margin-top:20px;
-  font-family: 'Poppins_400Regular'
+  font-family: 'Poppins_400Regular_Italic';
+`
+
+export const GroupLoginSocials = styled.View`
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap:10px;
+  margin-top: 10px;
+`
+
+export const ButtonLogin = styled.TouchableOpacity`
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap:2px;
+`
+export const TextButton = styled.Text``
+
+export const TittleLoginWithSocials = styled.View`
+  width: 100%;
+  flex-direction: row;
+  gap:6px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+`
+
+export const Line = styled.View`
+  width: 35%;
+  height: 1px;
+  background-color: rgba(0,0,0,0.3s);
+`
+export const TextLoginWithSocials = styled.Text`
+  font-family: 'Poppins_300Light_Italic';
 `

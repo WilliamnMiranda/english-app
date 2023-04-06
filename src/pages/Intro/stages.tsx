@@ -15,7 +15,7 @@ export const Slides = [
 	},
 	{
 		key: 2,
-		title: "Estude de onde quiser",
+		title: "Estude de onde voce quiser",
 		text: "Com o nosso aplicativo de estudos de cartões, você tem a liberdade de estudar de onde quiser, em qualquer dispositivo. Seja no seu computador, tablet ou smartphone, o acesso ao seu material de estudo é fácil e prático",
 		image: <Stage2 {...props} />,
 		backgroundColor: '#59b2ab',
