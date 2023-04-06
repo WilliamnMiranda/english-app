@@ -80,7 +80,7 @@ export const TittleLoginWithSocials = styled.View`
 export const Line = styled.View`
   width: 35%;
   height: 1px;
-  background-color: rgba(0,0,0,0.3s);
+  background-color: rgba(0,0,0,0.4);
 `
 export const TextLoginWithSocials = styled.Text`
   font-family: 'Poppins_300Light_Italic';
