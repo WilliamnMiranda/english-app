@@ -1,11 +1,13 @@
 import { Text, View } from "react-native"
 import Auth from "./auth"
+import { UserContext } from "../contexts/UserContext"
+import { useContext } from "react"
 
 const Navigation = () => {
-  const auth = false
+  const { authenticate } = useContext(UserContext)
   return (
     <>
-      {auth ? <Text> teste </Text> : <Auth />}
+      {authenticate ? <Text> teste </Text> : <Auth />}
     </>
   )
 }
