@@ -5,15 +5,13 @@ import Google from '../../images/google-logo.svg'
 import React from 'react'
 import * as C from './styles'
 import userServices from '../../services/userServices'
+import useUser from '../../hooks/useUser'
 const Login = () => {
   const data = {
     email: 'williamnmiranda@gmail.com',
     password: '123'
   }
-
-  const submit = async () => await userServices.login(data)
-
-
+  const { login } = useUser();
   return (
     <C.ContainerLogin>
 
@@ -32,7 +30,7 @@ const Login = () => {
 
 
       <C.ButtonSubmit>
-        <C.TextButtonSubmit onPress={() => submit()}>login</C.TextButtonSubmit>
+        <C.TextButtonSubmit onPress={() => login(data)}>login</C.TextButtonSubmit>
       </C.ButtonSubmit>
 
       <C.RecoverPassword>Esqueci minha senha</C.RecoverPassword>

@@ -5,6 +5,7 @@ import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { useFonts, Inter_400Regular } from '@expo-google-fonts/inter';
 import fonts from './fonts'
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 function App() {
 
@@ -16,12 +17,14 @@ function App() {
   if (!fontsLoaded) {
     return null;
   }
-
+  const queryClient = new QueryClient()
   return (
-    <NavigationContainer>
-      <Navigation />
-      <StatusBar />
-    </NavigationContainer>
+    <QueryClientProvider client={queryClient}>
+      <NavigationContainer>
+        <Navigation />
+        <StatusBar />
+      </NavigationContainer>
+    </QueryClientProvider>
   );
 }
 
