@@ -1,4 +1,4 @@
-import { Text, View } from "react-native"
+import { Text } from "react-native"
 import Auth from "./auth"
 import { UserContext } from "../contexts/UserContext"
 import { useContext } from "react"
