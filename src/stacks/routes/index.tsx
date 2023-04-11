@@ -2,20 +2,21 @@ import * as React from 'react';
 import { Text, View } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+import * as C from './style'
+import MyTabBar from '../../components/tabBar';
 function HomeScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'red' }}>
-      <Text>Home!</Text>
-    </View>
+    <C.ScrollView>
+      <C.ContainerScreenRoute><Text>Home!</Text></C.ContainerScreenRoute>
+    </C.ScrollView>
   );
 }
 
 function SettingsScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
+    <C.ScrollView>
+      <C.ContainerScreenRoute><Text>Home!</Text></C.ContainerScreenRoute>
+    </C.ScrollView>
   );
 }
 
@@ -52,7 +53,7 @@ export default function Routes() {
             width: 65,
             height: 65,
             borderWidth: 8,
-            borderColor: 'red',
+            borderColor: 'grey',
             borderRadius: 50,
             backgroundColor: 'pink',
             padding: 0,
@@ -65,22 +66,7 @@ export default function Routes() {
       )
   }
   return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: () => renderTabs(route),
-        tabBarActiveTintColor: 'tomato',
-        tabBarInactiveTintColor: 'gray',
-        tabBarShowLabel: false,
-        tabBarStyle: {
-          height: 60,
-          position: 'absolute',
-          bottom: 20,
-          left: 15,
-          right: 15,
-          borderRadius: 30,
-        },
-        ...options,
-      })}>
+    <Tab.Navigator tabBar={props => <MyTabBar {...props} />}>
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="CreateClass" component={SettingsScreen} />
       <Tab.Screen name="Profile" component={SettingsScreen} />
