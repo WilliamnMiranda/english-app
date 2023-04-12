@@ -6,7 +6,7 @@ export const api = axios.create({
 
 api.interceptors.request.use(
   async (config) => {
-    const token = await AsyncStorage.getItem('@token');
+    const token = await AsyncStorage.getItem('@english-token');
     if (token) {
       config.headers!['x-access-token'] = token;
     }
