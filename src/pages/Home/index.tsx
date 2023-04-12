@@ -4,13 +4,12 @@ import { useQuery } from 'react-query'
 import collectionServices from '../../services/collectionServices'
 import userServices from '../../services/userServices'
 const HomePage = () => {
-  const get = async () => {
-    await collectionServices.getAll()
-  }
+  const { data } = useQuery({
+    queryKey: ['collections'],
+    queryFn: () => collectionServices.getAll(),
+  })
 
-  useEffect(() => {
-    get()
-  }, [])
+  console.log(data)
   return (
     <C.ContainerHome>
       <C.TextDashboard>Dashboard</C.TextDashboard>
