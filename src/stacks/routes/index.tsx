@@ -4,19 +4,11 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as C from './style'
 import MyTabBar from '../../components/tabBar';
-function HomeScreen() {
-  return (
-    <C.ScrollView>
-      <C.ContainerScreenRoute><Text>Home!</Text></C.ContainerScreenRoute>
-    </C.ScrollView>
-  );
-}
+import HomeScreen from '../../pages/Home'
 
 function SettingsScreen() {
   return (
-    <C.ScrollView>
-      <C.ContainerScreenRoute><Text>Home!</Text></C.ContainerScreenRoute>
-    </C.ScrollView>
+    <C.ContainerScreenRoute><Text>Home!</Text></C.ContainerScreenRoute>
   );
 }
 

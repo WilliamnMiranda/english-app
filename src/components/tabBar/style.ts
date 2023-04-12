@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 export const ContainerTabBar = styled.View`
   flex-direction: row;
   height: 90px;
-  background-color: rgba(216, 215, 216, 0.8);
+  background-color: #f2f2f2;
   justify-content: center;
   padding-bottom: 20;
 `;
@@ -27,6 +27,6 @@ export const ButtonCreate = styled.TouchableOpacity`
   justify-content: center;
   position: relative;
   top: -10%;
-  border-color: rgba(216, 215, 216, 0.8);
+  border-color: #f2f2f2;
   border-width: 8px;
 `;
