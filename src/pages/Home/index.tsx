@@ -2,14 +2,18 @@ import React, { useEffect } from 'react'
 import * as C from './style'
 import { useQuery } from 'react-query'
 import collectionServices from '../../services/collectionServices'
-import userServices from '../../services/userServices'
+import { ICollection } from '../../interfaces/collections_interfaces'
+
+
+interface IQueryData {
+  data: ICollection[]
+}
 const HomePage = () => {
-  const { data } = useQuery({
+  const { data } = useQuery<IQueryData>({
     queryKey: ['collections'],
     queryFn: () => collectionServices.getAll(),
   })
 
-  console.log(data)
   return (
     <C.ContainerHome>
       <C.TextDashboard>Dashboard</C.TextDashboard>
