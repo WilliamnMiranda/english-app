@@ -7,25 +7,26 @@ interface IFlatList {
   keyExtractor: (item: ICollection) => string;
 }
 export const ContainerHome = styled.View`
-  padding: 10px 17px;
+  padding: 30px 17px 10px 17px;
   background-color: #ffffff;
   flex: 1;
 `;
 export const TextDashboard = styled.Text`
-  font-family: 'Poppins_500Medium_Italic';
+  font-family: 'Rubik_500Medium_Italic';
+  margin-bottom: 15px;
   font-size: 22px;
 `;
 export const ListCollections = styled.View`
   gap: 15px;
 `;
 
-export const ContainerItem = styled.View`
+export const ContainerItem = styled.TouchableOpacity`
   background-color: white;
   padding: 15px;
   justify-content: flex-start;
   flex-direction: row;
   border-radius: 10px;
-  border-width: 1px;
+  border-width: 0.9px;
   border-color: rgba(0, 0, 0, 0.1);
   gap: 10px;
 `;

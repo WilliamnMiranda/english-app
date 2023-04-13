@@ -58,7 +58,11 @@ export default function Routes() {
       )
   }
   return (
-    <Tab.Navigator tabBar={props => <MyTabBar {...props} />}>
+    <Tab.Navigator tabBar={props => <MyTabBar {...props} />}
+      screenOptions={
+        { ...options }
+      }
+    >
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="CreateClass" component={SettingsScreen} />
       <Tab.Screen name="Profile" component={SettingsScreen} />
