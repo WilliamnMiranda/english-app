@@ -55,7 +55,7 @@ function MyTabBar({ state, descriptors, navigation }: { state: any, descriptors:
                 onLongPress={onLongPress}
                 activeOpacity={1}
               >
-                <Text>{routes[1].icon}</Text>
+                <Text style={{ color: 'white' }}>{routes[1].icon}</Text>
               </C.ButtonCreate>
             )
 
@@ -69,7 +69,7 @@ function MyTabBar({ state, descriptors, navigation }: { state: any, descriptors:
               onLongPress={onLongPress}
               style={{ flex: 1 }}
             >
-              <Text style={{ textAlign: 'center', color: isFocused ? '#673ab7' : '#222' }}>
+              <Text style={{ textAlign: 'center', color: 'white' }}>
                 {routes.map((item) => {
                   if (item.name === currentRoute)
                     return item.icon

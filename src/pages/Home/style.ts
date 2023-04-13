@@ -8,6 +8,8 @@ interface IFlatList {
 }
 export const ContainerHome = styled.View`
   padding: 10px 17px;
+  background-color: #ffffff;
+  flex: 1;
 `;
 export const TextDashboard = styled.Text`
   font-family: 'Poppins_500Medium_Italic';
@@ -19,10 +21,12 @@ export const ListCollections = styled.View`
 
 export const ContainerItem = styled.View`
   background-color: white;
-  padding: 10px;
+  padding: 15px;
   justify-content: flex-start;
   flex-direction: row;
   border-radius: 10px;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.1);
   gap: 10px;
 `;
 export const ContainerNameAndAbbreviation = styled.Text`
