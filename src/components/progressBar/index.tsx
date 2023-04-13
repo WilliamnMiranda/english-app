@@ -1,11 +1,16 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import * as C from './style'
 
-const ProgressBar = () => {
+interface IProps {
+  totalCardsCompleted: number,
+  totalCards: number
+}
+const ProgressBar = ({ totalCardsCompleted, totalCards }: IProps) => {
   return (
-    <View>
-      <Text>index</Text>
-    </View>
+    <C.ContainerProgressBar>
+      <C.Progress />
+    </C.ContainerProgressBar>
   )
 }
 

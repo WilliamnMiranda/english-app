@@ -25,17 +25,28 @@ export const ContainerItem = styled.View`
   border-radius: 10px;
   gap: 10px;
 `;
-export const ContainerNameAndAbbreviation = styled.Text``;
+export const ContainerNameAndAbbreviation = styled.Text`
+  font-family: 'Poppins_600SemiBold';
+`;
 
-export const ContinerCardsCompleted = styled.Text``;
+export const ContinerCardsCompleted = styled.Text`
+  font-family: 'Poppins_400Regular';
+  font-size: 12px;
+`;
 
 export const ContainerIcon = styled.View`
   height: 65px;
   width: 65px;
   border-radius: 5px;
-  background-color: pink;
+  background-color: rgb(103, 112, 255);
   align-items: center;
   justify-content: center;
 `;
-export const Icon = styled.Text``;
-export const ContainerInfos = styled.View``;
+export const Icon = styled.Text`
+  color: white;
+  font-size: 30;
+`;
+export const ContainerInfos = styled.View`
+  flex-grow: 1;
+  justify-content: space-between;
+`;

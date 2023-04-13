@@ -5,6 +5,7 @@ import collectionServices from '../../services/collectionServices'
 import { ICollection } from '../../interfaces/collections_interfaces'
 import { View, Text, ScrollView } from 'react-native'
 import useCollection from '../../hooks/useCollection'
+import ProgressBar from '../../components/progressBar'
 
 
 const ItemList = ({ item }: { item: ICollection }) => {
@@ -13,7 +14,6 @@ const ItemList = ({ item }: { item: ICollection }) => {
     totalCardsCompleted,
     totalCards
   } = verifyCompletedCollections(item)
-
   return (
     <C.ContainerItem>
       <C.ContainerIcon>
@@ -22,6 +22,7 @@ const ItemList = ({ item }: { item: ICollection }) => {
       <C.ContainerInfos>
         <C.ContainerNameAndAbbreviation>{`${item.abbreviation} - ${item.name}`}</C.ContainerNameAndAbbreviation>
         <C.ContinerCardsCompleted>{`${totalCardsCompleted}/${totalCards} cards completos`}</C.ContinerCardsCompleted>
+        <ProgressBar totalCardsCompleted={totalCardsCompleted} totalCards={totalCards} />
       </C.ContainerInfos>
     </C.ContainerItem>
   )
