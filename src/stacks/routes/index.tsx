@@ -4,23 +4,25 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as C from './style'
 import MyTabBar from '../../components/tabBar';
-import HomeScreen from '../../pages/Home'
-
+import HomeStack from '../homeStacks';
+import options
+  from '../../helpers/configsHeaderRoutes';
 function SettingsScreen() {
   return (
     <C.ContainerScreenRoute><Text>Home!</Text></C.ContainerScreenRoute>
   );
 }
 
+function ProfileScreen({ route, navigation }: any) {
+  const { collection } = route.params;
+  console.log(collection)
+  return (
+    <C.ContainerScreenRoute><Text>Home!</Text></C.ContainerScreenRoute>
+  );
+}
 const Tab = createBottomTabNavigator();
 
 export default function Routes() {
-
-  const options = {
-    title: '',
-    headerTransparent: true,
-    headerShown: false,
-  }
 
 
   const renderTabs = (route: any) => {
@@ -63,9 +65,9 @@ export default function Routes() {
         { ...options }
       }
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Home" component={HomeStack} />
       <Tab.Screen name="CreateClass" component={SettingsScreen} />
-      <Tab.Screen name="Profile" component={SettingsScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
 }
