@@ -16,7 +16,11 @@ const ItemList = ({ item, navigation }: { item: ICollection, navigation: any }) 
   return (
     <C.ContainerItem onPress={() => {
       navigation.navigate('Collections', {
-        collection: item
+        collection: item,
+        completedTasks: {
+          totalCardsCompleted,
+          totalCards
+        }
       })
     }}>
       <C.ContainerIcon>
