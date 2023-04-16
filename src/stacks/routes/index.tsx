@@ -7,12 +7,29 @@ import MyTabBar from '../../components/tabBar';
 import HomeStack from '../homeStacks';
 import options
   from '../../helpers/configsHeaderRoutes';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomePage from '../../pages/Home';
+import CollectionScreen from '../../pages/Collection';
 function SettingsScreen() {
   return (
     <C.ContainerScreenRoute><Text>Home!</Text></C.ContainerScreenRoute>
   );
 }
 
+const TabNavigator = () => {
+  const Tab = createBottomTabNavigator();
+  return (
+    <Tab.Navigator tabBar={props => <MyTabBar {...props} />}
+      screenOptions={
+        { ...options }
+      }
+    >
+      <Tab.Screen name="Home" component={HomePage} />
+      <Tab.Screen name="CreateClass" component={SettingsScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
+    </Tab.Navigator>
+  )
+}
 function ProfileScreen({ route, navigation }: any) {
   const { collection } = route.params;
   console.log(collection)
@@ -20,23 +37,14 @@ function ProfileScreen({ route, navigation }: any) {
     <C.ContainerScreenRoute><Text>Home!</Text></C.ContainerScreenRoute>
   );
 }
-const Tab = createBottomTabNavigator();
-
 export default function Routes() {
-
+  const Stack = createNativeStackNavigator();
   return (
-    <Tab.Navigator tabBar={props => <MyTabBar {...props} />}
-      screenOptions={
-        { ...options }
-      }
-    >
-      <Tab.Screen name="Home" component={HomeStack} options={{
-        tabBarStyle: {
-          display: 'none'
-        }
-      }} />
-      <Tab.Screen name="CreateClass" component={SettingsScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
-    </Tab.Navigator>
+    <Stack.Navigator screenOptions={
+      { ...options }
+    }>
+      <Stack.Screen name="Home" component={TabNavigator} />
+      <Stack.Screen name="Collections" component={CollectionScreen} />
+    </Stack.Navigator>
   );
 }
