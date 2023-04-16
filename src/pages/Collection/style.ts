@@ -86,6 +86,8 @@ export const CompletedTasks = styled.Text`
   font-size: 17px;
   color: white;
   font-family: 'Rubik_500Medium';
+  position: relative;
+  top: -0.5%;
 `;
 export const TextCompletedCards = styled.Text`
   font-size: 15px;

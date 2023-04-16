@@ -17,6 +17,7 @@ const routes = [
 ]
 
 function MyTabBar({ state, descriptors, navigation }: { state: any, descriptors: any, navigation: any }) {
+
   return (
     <C.ContainerTabBar>
       <C.TabBar>
