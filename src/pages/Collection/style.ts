@@ -31,8 +31,10 @@ export const ContainerBack = styled.TouchableOpacity`
 export const TextBackDashboard = styled.Text`
   color: white;
   position: relative;
+  font-size: 15px;
   top: 1.5%;
   font-family: 'Poppins_400Regular';
+  text-transform: uppercase;
 `;
 
 export const ContainerIcons = styled.View`
@@ -46,12 +48,14 @@ export const NameAndIconHeader = styled.View`
   flex-direction: row;
   align-items: center;
   gap: 10px;
+  width: 100%;
+  overflow: hidden;
 `;
 
 export const ContainerLogo = styled.View`
   height: 85px;
   width: 85px;
-  border-radius: 5px;
+  border-radius: 15px;
   background-color: rgb(103, 112, 255);
   align-items: center;
   justify-content: center;
@@ -61,18 +65,30 @@ export const TextLogo = styled.Text`
   color: white;
   font-size: 45px;
   text-transform: uppercase;
-  font-family: 'Poppins_500Medium,';
+  font-family: 'Roboto_400Regular';
 `;
 
 export const NameCollection = styled.Text`
   color: white;
-  font-size: 22px;
+  font-size: 25px;
   text-transform: uppercase;
-  font-family: 'Poppins_700Bold';
+  font-family: 'Rubik_600SemiBold';
+  width: 74%;
 `;
 
 export const ContainerCompletedTasks = styled.View`
   flex-direction: row;
+  align-items: center;
+  gap: 5px;
 `;
-export const CompletedTasks = styled.Text``;
-export const TextCompletedCards = styled.Text``;
+export const CompletedTasks = styled.Text`
+  color: white;
+  font-size: 17px;
+  color: white;
+  font-family: 'Rubik_500Medium';
+`;
+export const TextCompletedCards = styled.Text`
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Poppins_400Regular';
+`;

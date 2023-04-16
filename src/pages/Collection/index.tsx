@@ -44,7 +44,7 @@ const CollectionScreen = ({ route, navigation }: IProps) => {
             <C.TextLogo>N</C.TextLogo>
           </C.ContainerLogo>
 
-          <C.NameCollection lineBreakMode='clip' numberOfLines={1}>{`${collection.abbreviation} - ${collection.name}`}</C.NameCollection>
+          <C.NameCollection numberOfLines={1}>{`${collection.abbreviation} - ${collection.name}`}</C.NameCollection>
         </C.NameAndIconHeader>
 
         <C.ContainerCompletedTasks>
