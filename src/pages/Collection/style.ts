@@ -94,3 +94,5 @@ export const TextCompletedCards = styled.Text`
   color: rgba(255, 255, 255, 0.7);
   font-family: 'Poppins_400Regular';
 `;
+
+export const ContainerCards = styled.View``;

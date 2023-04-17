@@ -1,6 +1,8 @@
+import { useQuery } from 'react-query';
 import { ICard } from '../interfaces/cards_interfaces';
 import { ICollection } from '../interfaces/collections_interfaces';
 import { IDecks } from '../interfaces/decks_interface';
+import collectionServices from '../services/collectionServices';
 
 const useCollection = () => {
   const verifyCompletedCollections = (collection: ICollection) => {

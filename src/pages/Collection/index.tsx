@@ -5,6 +5,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { ICollection } from '../../interfaces/collections_interfaces';
+import useDeck from '../../hooks/useDeck';
 
 interface IProps {
   navigation?: any
@@ -18,9 +19,12 @@ interface IProps {
     }
   }
 }
+
 const CollectionScreen = ({ route, navigation }: IProps) => {
   const { collection, completedTasks: { totalCardsCompleted, totalCards } } = route!.params;
-  console.log(totalCardsCompleted, totalCards)
+  const { data } = useDeck({
+    collection: collection._id
+  })
   return (
     <C.ContainerCollection>
       <C.HeaderCollection>
@@ -52,6 +56,16 @@ const CollectionScreen = ({ route, navigation }: IProps) => {
           <C.CompletedTasks>{`${totalCardsCompleted} / ${totalCards}`}</C.CompletedTasks>
         </C.ContainerCompletedTasks>
       </C.HeaderCollection>
+
+      <C.ContainerCards>
+        {
+          data?.map((item) => {
+            return (
+              <Text>{item.code}</Text>
+            )
+          })
+        }
+      </C.ContainerCards>
     </C.ContainerCollection>
   )
 }
