@@ -2,14 +2,19 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import ImageLogin from '../../images/Login.svg'
 import Face from '../../images/face-logo.svg'
 import Google from '../../images/google-logo.svg'
-import React from 'react'
+import React, { useRef } from 'react'
 import * as C from './styles'
 import userServices from '../../services/userServices'
 import useUser from '../../hooks/useUser'
 const Login = () => {
-  const data = {
-    email: 'williamnmiranda@gmail.com',
-    password: '123'
+  const email = useRef('')
+  const password = useRef('')
+  const handleSubmit = () => {
+    const data = {
+      email: email.current,
+      password: password.current
+    }
+    login(data)
   }
   const { login } = useUser();
   return (
@@ -19,18 +24,18 @@ const Login = () => {
       <C.ContainerInputs>
         <C.ContainerInput>
           <C.Label>Digite seu email</C.Label>
-          <C.Input />
+          <C.Input onChangeText={(text) => email.current = text} />
         </C.ContainerInput>
 
         <C.ContainerInput>
           <C.Label>Digite sua senha</C.Label>
-          <C.Input />
+          <C.Input onChangeText={(text) => password.current = text} />
         </C.ContainerInput>
       </C.ContainerInputs>
 
 
-      <C.ButtonSubmit>
-        <C.TextButtonSubmit onPress={() => login(data)}>login</C.TextButtonSubmit>
+      <C.ButtonSubmit onPress={() => handleSubmit()}>
+        <C.TextButtonSubmit>login</C.TextButtonSubmit>
       </C.ButtonSubmit>
 
       <C.RecoverPassword>Esqueci minha senha</C.RecoverPassword>

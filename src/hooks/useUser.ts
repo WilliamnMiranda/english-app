@@ -15,7 +15,7 @@ const useUser = () => {
       await AsyncStorage.setItem('@english-token', user.token);
       return;
     }
-    console.log(user);
+    return;
   };
 
   return {
