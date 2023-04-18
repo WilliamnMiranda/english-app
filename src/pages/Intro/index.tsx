@@ -31,10 +31,10 @@ const Intro = ({ navigation }: any) => {
   }) => {
     return (
       <C.ContainerIntro>
-        <View className='w-full h-1/2'>
+        <C.ImageIntro>
           {item.image}
-        </View>
-        <C.TittleIntro adjustsFontSizeToFit>
+        </C.ImageIntro>
+        <C.TittleIntro>
           {item.title}
         </C.TittleIntro>
         <C.TextIntro>

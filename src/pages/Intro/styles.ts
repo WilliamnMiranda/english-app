@@ -9,8 +9,12 @@ export const ContainerHeader = styled.View`
   background-color: white;
 `;
 
+export const ImageIntro = styled.View`
+  height: 50%;
+  width: 100%;
+`;
 export const TittleIntro = styled.Text`
-  font-family: 'Roboto_500Medium';
+  font-family: 'Roboto_400Regular';
   font-size: 20px;
   text-align: center;
   width: 100%;

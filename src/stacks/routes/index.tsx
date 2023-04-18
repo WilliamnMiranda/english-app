@@ -10,6 +10,8 @@ import options
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomePage from '../../pages/Home';
 import CollectionScreen from '../../pages/Collection';
+import Profile from '../../pages/Profile'
+
 function SettingsScreen() {
   return (
     <C.ContainerScreenRoute><Text>Home!</Text></C.ContainerScreenRoute>
@@ -26,16 +28,9 @@ const TabNavigator = () => {
     >
       <Tab.Screen name="Home" component={HomePage} />
       <Tab.Screen name="CreateClass" component={SettingsScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   )
-}
-function ProfileScreen({ route, navigation }: any) {
-  const { collection } = route.params;
-  console.log(collection)
-  return (
-    <C.ContainerScreenRoute><Text>Home!</Text></C.ContainerScreenRoute>
-  );
 }
 export default function Routes() {
   const Stack = createNativeStackNavigator();
