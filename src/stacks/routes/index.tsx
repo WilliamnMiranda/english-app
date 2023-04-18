@@ -11,12 +11,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomePage from '../../pages/Home';
 import CollectionScreen from '../../pages/Collection';
 import Profile from '../../pages/Profile'
-
-function SettingsScreen() {
-  return (
-    <C.ContainerScreenRoute><Text>Home!</Text></C.ContainerScreenRoute>
-  );
-}
+import CreateCollection from '../../pages/CreateCollection';
 
 const TabNavigator = () => {
   const Tab = createBottomTabNavigator();
@@ -27,7 +22,7 @@ const TabNavigator = () => {
       }
     >
       <Tab.Screen name="Home" component={HomePage} />
-      <Tab.Screen name="CreateClass" component={SettingsScreen} />
+      <Tab.Screen name="CreateClass" component={CreateCollection} />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   )
