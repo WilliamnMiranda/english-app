@@ -16,7 +16,8 @@ import CreateCollection from '../../pages/CreateCollection';
 const TabNavigator = () => {
   const Tab = createBottomTabNavigator();
   return (
-    <Tab.Navigator tabBar={props => <MyTabBar {...props} />}
+    <Tab.Navigator
+      tabBar={props => <MyTabBar {...props} />}
       screenOptions={
         { ...options }
       }

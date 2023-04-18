@@ -2,9 +2,18 @@ import { View, Text } from 'react-native'
 import React, { useRef } from 'react'
 import * as C from './style'
 import Image from '../../images/newCard.svg'
+import useCollection from '../../hooks/useCollection'
 const CreateCollection = () => {
   const abbreviation = useRef('')
   const name = useRef('')
+  const { createCollection } = useCollection()
+  const submitCollection = () => {
+    const data = {
+      abbreviation: abbreviation.current,
+      name: name.current
+    }
+    createCollection(data)
+  }
   return (
     <C.ContainerCreateCollection>
       <C.ContainerImage>
@@ -24,7 +33,7 @@ const CreateCollection = () => {
 
 
         <C.ButtonSubmit>
-          <C.TextButtonSubmit>ADICIONAR</C.TextButtonSubmit>
+          <C.TextButtonSubmit onPress={() => submitCollection()}>ADICIONAR</C.TextButtonSubmit>
         </C.ButtonSubmit>
       </C.ContainerInputs>
     </C.ContainerCreateCollection>

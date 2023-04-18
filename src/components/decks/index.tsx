@@ -4,10 +4,15 @@ import { IDecks } from '../../interfaces/decks_interface'
 import * as C from './style'
 import AntDesign from '@expo/vector-icons/AntDesign';
 import ProgressBar from '../progressBar';
+import verifyCompletedCards from '../../helpers/checkFullCards';
 interface IProps {
   deck: IDecks
 }
 const Deck = ({ deck }: IProps) => {
+  const {
+    numberCompletedCards,
+    totalCards
+  } = verifyCompletedCards(deck)
   return (
     <C.ContainerDeck>
       <C.IconInit>
@@ -21,10 +26,10 @@ const Deck = ({ deck }: IProps) => {
         </C.NameAndCode>
 
         <C.CompletedCards>
-          <C.TextCompletedCards>{`0/20 cards estudados`}</C.TextCompletedCards>
+          <C.TextCompletedCards>{`${numberCompletedCards}/${totalCards} cards estudados`}</C.TextCompletedCards>
         </C.CompletedCards>
 
-        <ProgressBar totalCardsCompleted={10} totalCards={20} />
+        <ProgressBar totalCardsCompleted={numberCompletedCards} totalCards={totalCards} />
       </C.Infos>
     </C.ContainerDeck>
   )
