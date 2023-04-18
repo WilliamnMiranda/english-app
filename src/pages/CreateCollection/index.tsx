@@ -23,8 +23,8 @@ const CreateCollection = () => {
         </C.ContainerInput>
 
 
-        <C.ButtonSubmit>
-          <C.TextButtonSubmit onPress={() => createCollection()}>ADICIONAR</C.TextButtonSubmit>
+        <C.ButtonSubmit onPress={() => createCollection()}>
+          <C.TextButtonSubmit>ADICIONAR</C.TextButtonSubmit>
         </C.ButtonSubmit>
       </C.ContainerInputs>
     </C.ContainerCreateCollection>
