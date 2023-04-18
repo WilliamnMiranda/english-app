@@ -95,4 +95,6 @@ export const TextCompletedCards = styled.Text`
   font-family: 'Poppins_400Regular';
 `;
 
-export const ContainerCards = styled.View``;
+export const ContainerCards = styled.ScrollView`
+  padding: 0px 20px;
+`;

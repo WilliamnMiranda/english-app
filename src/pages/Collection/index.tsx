@@ -6,6 +6,7 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { ICollection } from '../../interfaces/collections_interfaces';
 import useDeck from '../../hooks/useDeck';
+import Deck from '../../components/decks';
 
 interface IProps {
   navigation?: any
@@ -61,7 +62,7 @@ const CollectionScreen = ({ route, navigation }: IProps) => {
         {
           data?.map((item) => {
             return (
-              <Text>{item.code}</Text>
+              <Deck deck={item} />
             )
           })
         }
