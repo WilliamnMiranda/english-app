@@ -18,6 +18,10 @@ export const Input = styled.TextInput`
   background-color: white;
   border-radius: 7;
   padding:0px 10px;
+  border-width: 1px;
+  border-color: rgba(0,0,0,0.2);
+  font-family: 'Poppins_400Regular';
+
 `
 export const Label = styled.Text`
   font-family: 'Poppins_400Regular';
