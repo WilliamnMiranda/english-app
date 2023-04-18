@@ -4,15 +4,22 @@ import { ICollection, ICreateCollection } from '../interfaces/collections_interf
 import { IDecks } from '../interfaces/decks_interface';
 import collectionServices from '../services/collectionServices';
 import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 const useCollection = () => {
   const [error, setError] = useState('');
+  const [abbreviation, setAbbreviation] = useState('');
+  const [name, setName] = useState('');
   const queryClient = useQueryClient();
+  const navigation = useNavigation();
   const mutate = useMutation((data: ICreateCollection) => collectionServices.create(data), {
     onSuccess: (data) => {
       console.log(data);
       queryClient.invalidateQueries(['collections']);
       queryClient.invalidateQueries(['decks']);
+      setAbbreviation('');
+      setError('');
+      navigation.goBack();
     },
     onError: ({ response }) => {},
   });
@@ -36,11 +43,10 @@ const useCollection = () => {
     };
   };
 
-  const createCollection = (data: ICreateCollection) => {
-    const { abbreviation } = data;
+  const createCollection = () => {
     if (abbreviation.length !== 3) setError('Voce precisa digitar ate 3 letras na sigla');
     else {
-      mutate.mutate(data);
+      mutate.mutate({ name, abbreviation });
     }
   };
 
@@ -48,6 +54,8 @@ const useCollection = () => {
     verifyCompletedCollections,
     createCollection,
     error,
+    setAbbreviation,
+    setName,
   };
 };
 

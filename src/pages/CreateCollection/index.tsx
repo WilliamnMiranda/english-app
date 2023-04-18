@@ -1,19 +1,10 @@
 import { View, Text } from 'react-native'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import * as C from './style'
 import Image from '../../images/newCard.svg'
 import useCollection from '../../hooks/useCollection'
 const CreateCollection = () => {
-  const abbreviation = useRef('')
-  const name = useRef('')
-  const { createCollection } = useCollection()
-  const submitCollection = () => {
-    const data = {
-      abbreviation: abbreviation.current,
-      name: name.current
-    }
-    createCollection(data)
-  }
+  const { createCollection, setAbbreviation, setName } = useCollection()
   return (
     <C.ContainerCreateCollection>
       <C.ContainerImage>
@@ -23,17 +14,17 @@ const CreateCollection = () => {
       <C.ContainerInputs>
         <C.ContainerInput>
           <C.Label>Digite a sigla da sua coleção</C.Label>
-          <C.Input onChangeText={(text) => abbreviation.current = text} />
+          <C.Input onChangeText={(text) => setAbbreviation(text)} />
         </C.ContainerInput>
 
         <C.ContainerInput>
           <C.Label>Digite o nome da coleção</C.Label>
-          <C.Input onChangeText={(text) => name.current = text} />
+          <C.Input onChangeText={(text) => setName(text)} />
         </C.ContainerInput>
 
 
         <C.ButtonSubmit>
-          <C.TextButtonSubmit onPress={() => submitCollection()}>ADICIONAR</C.TextButtonSubmit>
+          <C.TextButtonSubmit onPress={() => createCollection()}>ADICIONAR</C.TextButtonSubmit>
         </C.ButtonSubmit>
       </C.ContainerInputs>
     </C.ContainerCreateCollection>
