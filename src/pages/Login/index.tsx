@@ -29,7 +29,7 @@ const Login = () => {
 
         <C.ContainerInput>
           <C.Label>Digite sua senha</C.Label>
-          <C.Input onChangeText={(text) => password.current = text} />
+          <C.Input secureTextEntry={true} onChangeText={(text) => password.current = text} />
         </C.ContainerInput>
       </C.ContainerInputs>
 
