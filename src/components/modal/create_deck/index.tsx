@@ -1,11 +1,16 @@
 import { View, Text } from 'react-native'
-import React, { SetStateAction } from 'react'
+import React, { SetStateAction, useState } from 'react'
 import AntDesign from '@expo/vector-icons/AntDesign';
 import * as C from './style'
-const CreateDeck = ({ visible, setVisible }: { visible: boolean, setVisible: React.Dispatch<SetStateAction<boolean>> }) => {
+import useDeck from '../../../hooks/useDeck';
+const CreateDeck = ({ visible, setVisible, collection }: { visible: boolean, setVisible: React.Dispatch<SetStateAction<boolean>>, collection: string }) => {
+  const [name, setName] = useState('');
+  const { createDeck } = useDeck({
+    collection
+  })
   return (
     <C.ContainerModal
-      animationType='slide'
+      animationType='fade'
       transparent={true}
       visible={visible}
     >
@@ -17,9 +22,12 @@ const CreateDeck = ({ visible, setVisible }: { visible: boolean, setVisible: Rea
 
           <C.ContainerInput>
             <C.Label>Digite o nome do seu deck</C.Label>
-            <C.InputText />
+            <C.InputText onChangeText={(text) => setName(text)} />
           </C.ContainerInput>
-          <C.ButtonCreate>
+          <C.ButtonCreate onPress={() => {
+            createDeck({ name, id: collection })
+            setVisible(false)
+          }}>
             <C.TextButton>ADICIONAR</C.TextButton>
           </C.ButtonCreate>
         </C.ContentModal>

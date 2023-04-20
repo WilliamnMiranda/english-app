@@ -8,6 +8,9 @@ import { ICollection } from '../../interfaces/collections_interfaces';
 import useDeck from '../../hooks/useDeck';
 import Deck from '../../components/decks';
 import CreateDeck from '../../components/modal/create_deck';
+import { IDecks } from '../../interfaces/decks_interface';
+import { useQuery } from 'react-query';
+import deckServices from '../../services/deckServices';
 
 interface IProps {
   navigation?: any
@@ -23,14 +26,16 @@ interface IProps {
 }
 
 const CollectionScreen = ({ route, navigation }: IProps) => {
-  const [activeModal, setActiveModal] = useState(true);
   const { collection, completedTasks: { totalCardsCompleted, totalCards } } = route!.params;
-  const { data } = useDeck({
-    collection: collection._id
-  })
+  const [activeModal, setActiveModal] = useState(false);
+  const { data } = useQuery<IDecks[]>({
+    queryKey: ['decks'],
+    queryFn: () => deckServices.getAll(collection._id!),
+    enabled: !!collection,
+  });
   return (
     <C.ContainerCollection>
-      <CreateDeck visible={activeModal} setVisible={setActiveModal} />
+      <CreateDeck visible={activeModal} setVisible={setActiveModal} collection={collection._id} />
       <C.HeaderCollection>
         <C.OptionsHeader>
           <C.ContainerBack

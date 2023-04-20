@@ -1,27 +1,21 @@
-import { useQuery, useQueryClient } from 'react-query';
+import { useMutation, useQuery, useQueryClient } from 'react-query';
 import deckServices from '../services/deckServices';
 import { IDecks } from '../interfaces/decks_interface';
+import { useState } from 'react';
 
 interface IProps {
   collection?: string;
 }
 const useDeck = ({ collection }: IProps) => {
   const queryClient = useQueryClient();
-
-  const { data, isLoading } = useQuery<IDecks[]>({
-    queryKey: ['decks'],
-    queryFn: () => deckServices.getAll(collection!),
-    enabled: !!collection,
+  const mutate = useMutation((data: { name: string; id: string }) => deckServices.create(data), {
+    onSuccess: (data) => {
+      queryClient.invalidateQueries(['decks']);
+    },
+    onError: ({ response }) => {},
   });
-
-  const createDeck = async (name: string, id: string) => {
-    await deckServices.create({ name, id });
-    queryClient.invalidateQueries(['decks']);
-  };
-
   return {
-    isLoading,
-    data,
+    createDeck: mutate.mutate,
   };
 };
 export default useDeck;
