@@ -8,7 +8,6 @@ interface IProps {
 }
 const ProgressBar = ({ totalCardsCompleted, totalCards }: IProps) => {
   const progressCompleted = totalCards > 0 ? Math.floor((totalCardsCompleted / totalCards) * 100) : 100
-  console.log(progressCompleted)
   return (
     <C.ContainerProgressBar>
       <C.Progress progress={progressCompleted} />

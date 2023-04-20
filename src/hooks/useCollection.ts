@@ -14,7 +14,6 @@ const useCollection = () => {
   const navigation = useNavigation();
   const mutate = useMutation((data: ICreateCollection) => collectionServices.create(data), {
     onSuccess: (data) => {
-      console.log(data);
       queryClient.invalidateQueries(['collections']);
       queryClient.invalidateQueries(['decks']);
       setAbbreviation('');
